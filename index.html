@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Career Skill Hub: High-demand digital skills jobs, courses, and guidance to boost your career.">
+<meta name="keywords" content="digital jobs, AI jobs, data science jobs, cloud computing, web development, career guidance, online courses">
+<meta name="author" content="Career Skill Hub">
+<meta name="description" content="Career Skill Hub helps students and freshers learn high-demand skills like AI, Data Science, Cloud Computing, Web Development with step-by-step roadmaps and career guidance.">
+<!-- ===== SEO START ===== -->
+
+<title>Career Skill Hub – AI, Data Science, Cloud Skills & Career Guidance</title>
+
+<meta name="description" content="Career Skill Hub helps students and freshers learn high-demand skills like AI, Data Science, Cloud Computing with step-by-step roadmaps and career guidance.">
+
+<meta name="keywords" content="AI roadmap, data science roadmap, cloud computing roadmap, career guidance for students, skills for freshers, high demand skills 2025">
+
+<meta name="author" content="Career Skill Hub">
+
+<link rel="canonical" href="https://YOURDOMAIN.COM/">
+
+<!-- Open Graph (Facebook / WhatsApp) -->
+<meta property="og:title" content="Career Skill Hub – Learn High Demand Skills">
+<meta property="og:description" content="Step-by-step roadmaps for AI, Data Science, Cloud & career guidance for students.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://YOURDOMAIN.COM/">
+<meta property="og:image" content="https://YOURDOMAIN.COM/preview.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Career Skill Hub">
+<meta name="twitter:description" content="Learn AI, Data Science & Cloud skills with structured roadmaps.">
+
+<!-- ===== SEO END ===== -->
+<link rel="icon" href="/favicon.ico">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   
+    <style>
+
+        /* Google Font (Poppins/Montserrat for premium look) */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        /* --- Base Styles & Variables --- */
+        :root {
+            --primary-color: #004AAD; /* Deep Blue */
+            --secondary-color: #FFC300; /* Gold/Amber Accent */
+            --dark-color: #1A1A2E; /* Dark Background */
+            --light-color: #F8F9FA; /* Off-White Background */
+            --text-color: #333333;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--dark-color);
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+
+        /* --- 1. Header and Navigation --- */
+       .header {
+    height: 80px;              /* 👈 fixed height */
+    padding: 0;                /* 👈 padding hatao */
+    display: flex;
+    align-items: center;       /* 👈 center me rahe */
+}
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    /* --- Naya Logo Styling (Image based) --- */
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 0; 
+              /* 👈 important */
+}
+
+
+.header-logo-image {
+    height: 150px; /* Logo ki height set karein */
+    width: 150px;  /* Gol aakaar logo ke liye height aur width same */
+    border-radius: 50%; /* Image ko gol bana dega */
+    object-fit: cover; 
+}
+
+ .logo-text-display {
+    font-size: 1.8rem;
+    color: var(--dark-color); /* Ya var(--primary-color) */
+    font-weight: 800;
+    
+}
+
+/* Yeh line purane .logo style ko override karti hai, agar woh kisi aur tag par laga ho */
+.logo {
+    display: none !important; 
+}
+        
+
+       
+/* --- NAYE BUTTON-STYLE LINKS --- */
+.nav-links a {
+    margin-left: 15px; /* Thoda space kam kiya */
+    font-weight: 600;
+    padding: 8px 12px; /* Button ke liye padding */
+    border-radius: 5px; 
+    position: relative;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    text-decoration: none; /* Text decoration hatana zaroori hai */
+}
+
+.nav-links a:not(.cta-button) { /* Skills, Courses, Jobs, Guidance ke liye */
+    background-color: var(--light-color); /* Halka Grey/Off-White background */
+    border: 1px solid #dee2e6; /* Halka border */
+    color: var(--dark-color); /* Dark text */
+}
+
+.nav-links a:not(.cta-button):hover {
+    background-color: #e9ecef; /* Hover par halka dark ho */
+    color: var(--primary-color); /* Text primary color ho jaye */
+    border-color: var(--primary-color);
+}
+
+/* Active Page Indicator (Jo page open hai uske liye) */
+.nav-links a.active-link { 
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: 1px solid var(--primary-color) !important;
+    font-weight: 700;
+}
+        .cta-button {
+            background-color: var(--secondary-color);
+            color: var(--dark-color) !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #e5b300;
+            transform: translateY(-2px);
+        }
+
+
+        /* --- 2. Hero Section --- */
+       /* --- 2. Hero Section --- */
+.hero-section {
+    /* IS LINE MEIN NAYA IMAGE FILE NAME DALENGE */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('my_hero_background1.jpg.png') no-repeat center center/cover;
+    height: 80vh; 
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+     min-height: 80vh;          /* 👈 FULL SCREEN */
+    padding-bottom: 80px;  
+}
+       .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 30px;   /* 👈 YEH LINE ADD KAR */
+}
+
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        .primary-cta-btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--dark-color) !important;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .primary-cta-btn:hover {
+            background-color: var(--primary-color);
+            color: white !important;
+            box-shadow: 0 8px 15px rgba(0, 74, 173, 0.3);
+        }
+
+        /* --- General Section Styles --- */
+        section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- 3. Featured Skills Grid --- */
+        .skill-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .skill-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+
+/* --- Skill Card Background Variants --- */
+
+.bg-ai {
+    background: linear-gradient(135deg, #e0f2ff, #ffffff);
+    border-top-color: #005eff;
+}
+
+.bg-data {
+    background: linear-gradient(135deg, #e9fff4, #ffffff);
+    border-top-color: #00a86b;
+}
+
+.bg-cloud {
+    background: linear-gradient(135deg, #f3ecff, #ffffff);
+    border-top-color: #7a3cff;
+}
+
+/* Icon color matching */
+.bg-ai .icon-container {
+    color: #005eff;
+}
+
+.bg-data .icon-container {
+    color: #00a86b;
+}
+
+.bg-cloud .icon-container {
+    color: #7a3cff;
+}
+
+        .premium-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon-container {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .skill-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-description {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .secondary-btn {
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .secondary-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* --- 4. Skill Assessment Section --- */
+        .assessment-section {
+            padding: 60px 0;
+            background-color: var(--dark-color);
+            color: white;
+        }
+
+        .bg-dark h3, .bg-dark p {
+            color: white;
+        }
+
+        .assessment-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .inverted-btn {
+            background-color: white;
+            color: var(--primary-color) !important;
+        }
+
+        .inverted-btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--dark-color) !important;
+            box-shadow: none;
+        }
+
+        /* --- 5. Testimonials --- */
+        .testimonials-section {
+            background-color: var(--light-color);
+        }
+
+        .testimonial-card {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 12px;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        blockquote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .author {
+            font-weight: 600;
+            color: var(--primary-color);
+            text-align: right;
+            display: block;
+        }
+
+        /* --- 6. Footer --- */
+        .footer {
+            background-color: var(--dark-color);
+            color: #dddddd;
+            padding: 50px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            color: #cccccc;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #333333;
+            padding-top: 20px;
+        }
+
+        /* --- Media Queries (Responsiveness) --- */
+        @media (max-width: 900px) {
+            .nav-links {
+                /* Mobile mein navigation ko display: none; nahi kar rahe, flex wrap use karenge */
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .assessment-content {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .assessment-content .primary-cta-btn {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+        /* ---------- Testimonial Auto Slider ---------- */
+
+.testimonial-slider {
+    position: relative;
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+.testimonial-card {
+    display: none;
+    padding: 40px;
+    background-color: white;
+    border-radius: 12px;
+    border-left: 5px solid var(--secondary-color);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    animation: fade 0.6s ease-in-out;
+}
+
+.testimonial-card.active {
+    display: block;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ---------- EXTRA UI BOOST ---------- */
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  color: #fff;
+}
+
+.hero-stats strong {
+  font-size: 1.8rem;
+  display: block;
+}
+
+.skill-card:hover {
+  transform: translateY(-12px) scale(1.02);
+}
+
+.final-cta {
+  background: linear-gradient(135deg, #004AAD, #001f4d);
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.final-cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.final-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.step {
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.site-footer {
+    background: #0b1c2d;
+    color: #cfd8dc;
+    text-align: center;
+    padding: 25px 10px;
+    margin-top: 60px;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #ffbf00;
+    text-decoration: underline;
+}
+
+.footer-links span {
+    color: #777;
+}
+
+.footer-copy {
+    font-size: 13px;
+    color: #9aa7b1;
+}
+
+
+/* ===== PREMIUM DISCLAIMER CARD ===== */
+.disclaimer {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    padding: 50px 15px;
+}
+
+.disclaimer .container {
+    max-width: 900px;
+}
+
+.disclaimer p {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 25px 30px;
+    border-radius: 14px;
+    color: #e5e7eb;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+/* Icon badge */
+.disclaimer p::before {
+    content: "DISCLAIMER";
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #facc15;
+    color: #1a1a1a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+/* ===== Disclaimer Scroll Animation ===== */
+.disclaimer {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.9s ease;
+}
+
+.disclaimer.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slight glow on hover (premium feel) */
+.disclaimer p:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+    transform: scale(1.02);
+    transition: 0.4s ease;
+}
+/* ===== Stats Section Background ===== */
+
+.stats-section {
+    background-image: url("stats-bg3.jpg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 20px;
+    position: relative;
+}
+
+/* Dark overlay for readability */
+.stats-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.stats-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    text-align: center;
+    color: #fff;
+}
+
+.stat h3 {
+    font-size: 44px;
+    font-weight: 800;
+    color: #ffd700;
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.9),
+        0 0 25px rgba(255, 215, 0, 0.6);
+}
+
+
+
+.stat p {
+    font-size: 25px;
+    opacity: 0.9;
+}
+/* ===== Premium Highlight Stats ===== */
+
+.stats-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+
+.stat {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 30px 35px;
+    border-radius: 18px;
+    min-width: 220px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 25px 55px rgba(0,0,0,0.8);
+}
+
+.stat h3 {
+    font-size: 44px;
+    font-weight: 800;
+    color: #ffd700;
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.9),
+        0 0 25px rgba(255, 215, 0, 0.6);
+    margin-bottom: 8px;
+}
+
+.stat p {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    opacity: 0.95;
+}
+/* ===== STATS SCROLL ANIMATION ===== */
+.stat {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+    transition: all 0.8s ease;
+}
+
+.stat.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+/* Career Guidance Section */
+.career-guidance {
+  padding: 80px 20px;
+  background: #ffffff;
+}
+
+.cg-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Left Image */
+.cg-image img {
+  width: 320px;
+  max-width: 100%;
+}
+
+/* Right Content */
+.cg-content h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.cg-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .cg-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cg-image img {
+    width: 260px;
+  }
+}
+.testimonial {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.testimonial-card {
+  width: 320px;
+  margin: auto;
+  padding: 30px 20px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.quote {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* 🔥 IMAGE FIX */
+.testimonial {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f8f9fb;
+}
+
+.testimonial-card {
+  max-width: 300px;
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.testimonial-card img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+.testimonial-card p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.testimonial-card strong {
+  color: #0b5ed7;
+}
+.slider-card {
+  display: none;
+  padding: 40px;
+  background-color: white;
+  border-radius: 12px;
+  border-left: 5px solid var(--secondary-color);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.slider-card.active {
+  display: block;
+}
+/* ===== Student Showcase Section ===== */
+
+.student-showcase {
+  padding: 60px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.student-card {
+  max-width: 320px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+.student-card img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #ffc300;
+}
+
+.student-card h4 {
+  font-size: 18px;
+  margin-bottom: 4px;
+  color: #0b1c2d;
+}
+
+.student-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.student-desc {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #444;
+  line-height: 1.6;
+}
+.student-photo img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* --- Success Stories Section Photo Integration Styles --- */
+
+/* Container ko Flexbox banane ke liye */
+.testimonial-content-wrapper {
+    display: flex;
+    justify-content: center; /* Center alignment */
+    align-items: center; /* Vertically center */
+    gap: 40px; /* Photo aur content ke beech ki jagah */
+    max-width: 1000px; /* Content ki max width set ki */
+    margin: 40px auto; /* Center mein karne ke liye */
+    text-align: left; 
+}
+
+/* Photo ki styling */
+.success-story-image {
+    width: 100%;
+    max-width: 350px; /* Photo ki max size */
+    height: auto;
+    /* Screenshot jaisa dikhne ke liye round corner aur shadow */
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+    display: block;
+}
+
+/* Photo container ka size set karna */
+.image-box {
+    flex-basis: 40%; /* Photo ko 40% space do */
+    /* Hata dein agar aapke screenshot mein round corner aur shadow nahi hai */
+}
+
+/* Testimonial slider ke liye space */
+.testimonial-slider-area {
+    flex-basis: 60%; /* Slider ko 60% space do */
+}
+
+/* Mobile Responsiveness (Screen chota hone par) */
+@media (max-width: 850px) {
+    .testimonial-content-wrapper {
+        flex-direction: column; /* Mobile mein photo aur content upar-neeche aayenge */
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .image-box {
+        order: 1; /* Photo pehle dikhegi */
+        margin-bottom: 20px;
+    }
+
+    .testimonial-slider-area {
+        order: 2; /* Slider baad mein dikhega */
+    }
+}
+/* ================= MOBILE FIX (FINAL) ================= */
+@media (max-width: 768px) {
+
+  /* 🔹 HEADER + LOGO FIX */
+  .header {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo-area {
+    justify-content: center;
+  }
+
+  .header-logo-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-text-display {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    padding: 6px 10px;
+    margin: 0;
+  }
+
+  /* 🔹 HERO SECTION FIX */
+  .hero-section {
+    height: auto;
+    min-height: unset;
+    padding: 60px 15px;
+    background-position: center top;
+  }
+
+  .hero-title {
+    font-size: 1.7rem;
+    line-height: 1.3;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  /* 🔹 HERO STATS FIX */
+  .hero-stats {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+  }
+
+  .hero-stats strong {
+    font-size: 1.5rem;
+  }
+
+  /* 🔹 HOW IT WORKS STEPS FIX */
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .step {
+    font-size: 15px;
+  }
+
+  /* 🔹 STATS SECTION TEXT FIX */
+  .stat h3 {
+    font-size: 32px;
+  }
+
+  .stat p {
+    font-size: 14px;
+  }
+}
+/* ===== MOBILE FRIENDLY ANIMATIONS ===== */
+@media (max-width: 768px) {
+
+  /* Smooth transition */
+  * {
+    transition: all 0.35s ease;
+  }
+
+  /* Cards entry animation */
+  .skill-card,
+  .stat,
+  .step,
+  .testimonial-card {
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hover jaisa feel (tap par) */
+  .skill-card:active,
+  .stat:active {
+    transform: scale(0.97);
+  }
+
+}
+
+    </style>
+</head>
+<body>
+  
+
+<header class="header">
+    <div class="container nav-bar"> 
+        <div class="logo-area"> 
+            <img src="csh_logo7.png" alt="Career Skill Hub Logo" class="header-logo-image"> 
+            <h1 class="logo-text-display">Career Skill Hub</h1> 
+        </div>
+        
+        <nav class="nav-links">
+            <a href="index.html">Skills</a> 
+            <a href="courses.html">Courses</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="guidance.html">Guidance</a>
+            <a href="#" class="cta-button">Start Your Journey</a>
+            <a href="blog.html">Blog</a>
+
+        </nav>
+
+    </div> 
+</header>
+    <section id="hero" class="hero-section">
+        <div class="container hero-content">
+        <h2 class="hero-title">
+High Demand Skills Roadmaps for Students & Freshers
+</h2>
+
+            <p class="hero-subtitle">
+Career Skill Hub helps students and professionals build in-demand skills
+with structured roadmaps, practical guidance, and career-focused learning.
+</p>
+
+            <p class="hero-subtitle">Curated roadmaps designed by industry leaders to accelerate your career growth.</p>
+            <p style="font-size:14px;color:#888;margin-top:15px;">
+Independent educational platform. No job or income guarantees.
+</p>
+            <a href="#featured-skills" class="primary-cta-btn">Explore Top Skills</a>
+            <p style="margin-top:15px;font-size:14px;">
+  <a href="#ai-ml-roadmap">AI & Machine Learning Roadmap</a> |
+  <a href="#data-roadmap">Data Science Roadmap</a> |
+  <a href="#cloud-roadmap">Cloud Computing Roadmap</a>
+</p>
+
+       <div class="hero-stats">
+  <div><strong>10,000+</strong><span>Students</span></div>
+  <div><strong>50+</strong><span>Roadmaps</span></div>
+  <div><strong>92%</strong><span>Success Rate</span></div>
+</div>
+        </div>
+        
+    </section>
+<section class="why-us">
+  <div class="container">
+    <h2 class="section-title">Why Career Skill Hub?</h2>
+
+    <p>
+Career Skill Hub is built for learners who want clarity in their career journey.
+We focus on real-world skills that companies actually look for.
+    </p>
+
+    <p>
+Instead of random courses, we provide step-by-step learning paths,
+skill roadmaps, and guidance based on current industry demand.
+    </p>
+
+    <p>
+Our platform is ideal for students, freshers, and self-learners who want
+to build strong fundamentals and grow professionally.
+    </p>
+  </div>
+</section>
+
+    <section class="how-it-works">
+    <h2>How Career Skill Hub Works</h2>
+    <div class="steps">
+        <div class="step">🔍 Choose Skill</div>
+        <div class="step">📚 Follow Roadmap</div>
+        <div class="step">🛠 Practice Projects</div>
+        <div class="step">💼 Get Job Ready</div>
+    </div>
+</section>
+
+
+
+    <section class="why-us">
+  <div class="container">
+    <h3 class="section-title">Why Career Skill Hub?</h3>
+
+    <div class="skill-cards-grid">
+      <div class="skill-card premium-shadow">
+        <i class="fas fa-road fa-2x"></i>
+        <h4>Clear Roadmaps</h4>
+        <p>Step-by-step learning paths for beginners.</p>
+      </div>
+
+      <div class="skill-card premium-shadow">
+        <i class="fas fa-user-graduate fa-2x"></i>
+        <h4>Student Focused</h4>
+        <p>BCA, BTech & beginners ke liye.</p>
+      </div>
+
+      <div class="skill-card premium-shadow">
+        <i class="fas fa-briefcase fa-2x"></i>
+        <h4>Job Ready Skills</h4>
+        <p>Industry demand ke according.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section id="featured-skills" class="skills-grid-section">
+        <div class="container">
+            <h3 class="section-title">In Demand Skills</h3>
+            <p class="section-desc">
+Explore carefully curated skill domains designed to help you
+stay relevant in today’s competitive job market.
+</p>
+
+            <div class="skill-cards-grid">
+                
+               <div class="skill-card premium-shadow bg-ai">
+                    <div class="icon-container"><i class="fas fa-brain"></i></div> 
+                    <h4 class="skill-title">Artificial Intelligence & ML</h4>
+                    <p class="skill-description">Learn to build intelligent systems and analyze complex data models.</p>
+                   <a href="#ai-ml-roadmap" class="secondary-btn">View Roadmap</a>
+
+
+                </div>
+
+            <div class="skill-card premium-shadow bg-data">
+                    <div class="icon-container"><i class="fas fa-chart-line"></i></div> 
+                    <h4 class="skill-title">Data Science & Analytics</h4>
+                    <p class="skill-description">Transform raw data into actionable business insights and strategies.</p>
+                   <a href="#data-roadmap" class="secondary-btn">View Roadmap</a>
+
+
+                </div>
+
+             <div class="skill-card premium-shadow bg-cloud">
+                    <div class="icon-container"><i class="fas fa-cloud"></i></div> 
+                    <h4 class="skill-title">Cloud Computing (AWS/Azure)</h4>
+                    <p class="skill-description">Master scalable infrastructure management and cloud deployment techniques.</p>
+                    <a href="#cloud-roadmap" class="secondary-btn">View Roadmap</a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+   
+<section class="stats-section">
+  <div class="stats-container">
+
+    <div class="stat">
+      <h3 data-count="10000">0</h3>
+      <p>Learners Guided</p>
+    </div>
+
+    <div class="stat">
+      <h3 data-count="50">0</h3>
+      <p>Skill Roadmaps</p>
+    </div>
+
+    <div class="stat">
+      <h3 data-count="92">0</h3>
+      <p>Positive Feedback</p>
+    </div>
+
+  </div>
+</section>
+
+    <section id="assessment" class="assessment-section bg-dark">
+        <div class="container assessment-content">
+            <h3 class="section-title text-light">Where Do You Stand?</h3>
+            <p class="text-light">Take our free 5-minute skill assessment to identify your strengths and gaps.</p>
+            <a href="#" class="primary-cta-btn inverted-btn">Take Free Assessment</a>
+        </div>
+    </section>
+   <section class="career-guidance">
+  <div class="cg-container">
+
+    <!-- LEFT IMAGE -->
+    <div class="cg-image">
+     <img src="student-girl3.png" alt="Career guidance for students learning digital skills">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="cg-content">
+      <h2>Career Guidance That Makes Sense</h2>
+      <p>
+        Choosing the right career can be confusing. Career Skill Hub provides
+        simple guidance to help you understand which skills to learn, what tools
+        to focus on, and how to move forward confidently.
+      </p>
+      <p>
+        Our guidance is based on market trends, job requirements, and practical
+        learning strategies.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+ <section id="testimonials" class="testimonials-section">
+    <div class="container">
+        <h3 class="section-title">Success Stories</h3>
+        <p class="section-desc">
+            Real learners. Real progress. Here’s how Career Skill Hub
+            helped students move forward.
+        </p>
+
+        <div class="testimonial-content-wrapper">
+            
+            <div class="image-box">
+               <img src="students-at-laptop.png" alt="Students learning AI and data science roadmap">
+
+            </div>
+
+            <div class="testimonial-slider-area"> 
+                
+                <div class="testimonial-slider"> 
+                    <div class="slider-card active"> 
+                        <blockquote>"DSA roadmap follow karne ke baad coding clear ho gayi."</blockquote>
+                        <p class="author">— Aman Kumar, BCA Student</p>
+                    </div>
+
+                    <div class="slider-card">
+                        <blockquote>"Career Skill Hub ke data analytics course se mujhe internship mil gayi."</blockquote>
+                        <p class="author">— Rohit Sharma, BSc CS</p>
+                    </div>
+
+                    <div class="slider-card">
+                        <blockquote>"Cloud roadmap ne AWS concepts easy bana diye."</blockquote>
+                        <p class="author">— Neha Verma, BTech</p>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+</section>
+            <div class="testimonial-card">
+                <blockquote>
+                    "DSA roadmap follow karke meri problem-solving strong hui."
+                </blockquote>
+                <p class="author">– Rohit K., Beginner Programmer</p>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>
+                    "Step-by-step skills ne mujhe internship ke liye ready kar diya."
+                </blockquote>
+                <p class="author">– Neha P., CS Student</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ===== Student Profile Showcase (Success Stories ke neeche) ===== -->
+
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Confused where to start?</h2>
+    <p>We will guide you step-by-step.</p>
+    <a href="#" class="primary-cta-btn">Get My Roadmap</a>
+  </div>
+</section>
+<section class="disclaimer">
+  <div class="container">
+    <p>
+Career Skill Hub provides educational content and guidance only.
+We do not guarantee jobs, income, or placements.
+    </p>
+  </div>
+</section>
+<section id="ai-ml-roadmap" class="container" style="padding:80px 20px">
+
+  <h1>Artificial Intelligence & Machine Learning Roadmap</h1>
+
+  <p>
+Artificial Intelligence (AI) and Machine Learning (ML) are among the most
+important technology domains shaping modern digital systems. From
+recommendation engines and search results to healthcare diagnostics
+and financial analysis, AI-driven solutions are increasingly used to
+support data-driven decision making. This roadmap is designed to help
+learners understand AI and ML concepts in a structured, beginner-friendly,
+and industry-aligned manner.
+  </p>
+
+  <h2>Why Artificial Intelligence & Machine Learning Matter</h2>
+
+  <p>
+AI and ML enable computers to learn patterns from data and improve
+performance over time without being explicitly programmed for every
+scenario. Organizations use these technologies to analyze large datasets,
+automate repetitive tasks, improve accuracy, and enhance user experiences.
+Understanding AI and ML helps learners build problem-solving skills that
+are applicable across multiple industries including technology, healthcare,
+finance, education, and e-commerce.
+  </p>
+
+  <p>
+Rather than focusing on shortcuts or unrealistic outcomes, this roadmap
+emphasizes foundational knowledge, practical understanding, and continuous
+learning. AI and ML are long-term skill domains that reward consistency,
+experimentation, and analytical thinking.
+  </p>
+
+  <h2>Core Concepts You Will Learn</h2>
+
+  <p>
+The roadmap begins with core programming and mathematical foundations
+required for AI and ML. Python is widely used due to its simplicity and
+strong ecosystem of libraries. Learners start by understanding variables,
+loops, functions, and data structures, followed by numerical computing
+concepts.
+  </p>
+
+  <ul>
+    <li>Python programming fundamentals</li>
+    <li>Basic statistics and probability concepts</li>
+    <li>Linear algebra essentials</li>
+    <li>Data preprocessing and feature engineering</li>
+    <li>Supervised and unsupervised learning concepts</li>
+  </ul>
+
+  <p>
+These fundamentals help learners understand how algorithms process data,
+identify patterns, and generate predictions. The focus remains on clarity
+and logic rather than memorizing formulas.
+  </p>
+
+  <h2>Machine Learning Algorithms</h2>
+
+  <p>
+Machine learning algorithms form the backbone of AI systems. Learners
+progress from simple models such as linear regression and decision trees
+to more advanced approaches like ensemble methods and neural networks.
+Each algorithm is studied in terms of its purpose, strengths, and
+limitations.
+  </p>
+
+  <p>
+Understanding when and why to use a particular algorithm is more important
+than simply implementing it. This roadmap encourages learners to analyze
+realistic datasets and evaluate model performance using appropriate metrics.
+  </p>
+
+  <h2>Deep Learning & Neural Networks</h2>
+
+  <p>
+Deep learning focuses on multi-layer neural networks that can model complex
+patterns in large datasets. These techniques are commonly used in image
+recognition, natural language processing, and speech analysis. Learners
+are introduced to neural network architecture, activation functions, and
+training processes in a conceptual and practical manner.
+  </p>
+
+  <p>
+Rather than treating deep learning as a black box, this roadmap explains
+how models learn, where they may fail, and why ethical considerations
+such as bias and data quality matter in real-world applications.
+  </p>
+
+  <h2>Tools & Technologies</h2>
+
+  <p>
+AI and ML development relies on a strong ecosystem of tools and libraries.
+Learners gain exposure to commonly used technologies that support data
+analysis, model building, and deployment workflows.
+  </p>
+
+  <ul>
+    <li>Python for AI and data analysis</li>
+    <li>NumPy and Pandas for numerical operations</li>
+    <li>Scikit-learn for machine learning models</li>
+    <li>TensorFlow or PyTorch for deep learning</li>
+    <li>Jupyter Notebook for experimentation</li>
+  </ul>
+
+  <p>
+The roadmap focuses on understanding tool usage rather than tool dependency,
+helping learners adapt to evolving technologies over time.
+  </p>
+
+  <h2>Model Evaluation & Deployment Basics</h2>
+
+  <p>
+Building a model is only one part of the AI lifecycle. Learners are
+introduced to evaluation techniques such as accuracy, precision, recall,
+and validation methods. These concepts help assess how well a model performs
+on unseen data.
+  </p>
+
+  <p>
+Basic deployment concepts are also covered, including how models are
+integrated into applications and monitored over time. The emphasis is on
+awareness rather than production-scale implementation.
+  </p>
+
+  <h2>Career Relevance & Skill Development</h2>
+
+  <p>
+AI and ML skills are relevant to roles such as Data Analyst, Machine Learning
+Engineer, AI Engineer, and Research Assistant. This roadmap does not promise
+specific job outcomes but focuses on helping learners build job-relevant
+technical and analytical skills.
+  </p>
+
+  <p>
+By following a structured learning path, learners can strengthen their
+problem-solving ability, data literacy, and technical confidence. Continuous
+practice, real-world projects, and ethical understanding are essential
+components of long-term growth in this field.
+  </p>
+
+  <p style="margin-top:30px;color:#777;font-size:14px;">
+    Disclaimer: This roadmap is intended for educational and guidance
+    purposes only. Career outcomes depend on individual effort, practice,
+    and external opportunities.
+  </p>
+
+</section>
+
+<section id="data-roadmap" class="container" style="padding:80px 20px">
+
+  <h1>Data Science & Analytics Roadmap</h1>
+
+  <p>
+Data Science and Analytics focus on extracting meaningful insights from
+structured and unstructured data. In today’s digital environment,
+organizations rely on data to understand trends, measure performance,
+and support informed decision-making. This roadmap provides a structured
+learning path for individuals who want to build strong analytical skills
+using industry-relevant tools and methods.
+  </p>
+
+  <h2>Why Data Science & Analytics Are Important</h2>
+
+  <p>
+Every digital system generates data, including websites, mobile
+applications, business platforms, and cloud services. Data science helps
+convert this raw information into useful knowledge. Analytics techniques
+support better planning, performance tracking, and strategic thinking
+across domains such as business, healthcare, education, and technology.
+  </p>
+
+  <p>
+This roadmap focuses on understanding how data is collected, cleaned,
+analyzed, and presented. Rather than promising outcomes, it emphasizes
+logical thinking, accuracy, and practical interpretation of information.
+  </p>
+
+  <h2>Foundational Skills</h2>
+
+  <p>
+The learning journey begins with foundational tools and concepts required
+to work with data effectively. Python and SQL are widely used for data
+analysis due to their flexibility and scalability. Learners are introduced
+to basic programming concepts, data types, and querying techniques.
+  </p>
+
+  <ul>
+    <li>Python programming for data analysis</li>
+    <li>SQL for database querying</li>
+    <li>Basic statistics and probability</li>
+    <li>Data types and structures</li>
+    <li>Data cleaning techniques</li>
+  </ul>
+
+  <p>
+These fundamentals help learners understand how to prepare datasets for
+analysis and avoid common data quality issues.
+  </p>
+
+  <h2>Data Analysis & Visualization</h2>
+
+  <p>
+Data analysis involves exploring datasets to identify trends, patterns,
+and anomalies. Learners study exploratory data analysis (EDA) techniques
+to summarize data using descriptive statistics and visual representations.
+  </p>
+
+  <p>
+Visualization plays a key role in communicating insights clearly. Charts,
+graphs, and dashboards help present findings in a format that supports
+decision-making for both technical and non-technical audiences.
+  </p>
+
+  <h2>Tools & Technologies</h2>
+
+  <p>
+Modern data science workflows rely on a range of tools that support data
+processing, analysis, and reporting. Learners gain exposure to commonly
+used technologies in analytics environments.
+  </p>
+
+  <ul>
+    <li>Python libraries such as Pandas and NumPy</li>
+    <li>Matplotlib and Seaborn for visualization</li>
+    <li>Spreadsheet tools for basic analysis</li>
+    <li>Jupyter Notebook for experimentation</li>
+    <li>BI concepts and dashboards</li>
+  </ul>
+
+  <p>
+The roadmap emphasizes understanding data concepts rather than focusing
+only on specific software tools.
+  </p>
+
+  <h2>Introduction to Machine Learning</h2>
+
+  <p>
+As part of analytics, learners are introduced to basic machine learning
+concepts. These techniques help identify patterns and relationships
+within datasets. The focus remains on understanding use cases and model
+interpretation rather than complex implementation.
+  </p>
+
+  <h2>Career Relevance & Skill Growth</h2>
+
+  <p>
+Data science and analytics skills are relevant for roles such as Data
+Analyst, Business Analyst, and Reporting Specialist. This roadmap helps
+learners develop job-relevant analytical thinking, data interpretation,
+and communication skills without making employment guarantees.
+  </p>
+
+  <p style="margin-top:30px;color:#777;font-size:14px;">
+    Disclaimer: This roadmap is intended for educational and informational
+    purposes only. Outcomes depend on individual effort and external factors.
+  </p>
+
+</section>
+<section id="cloud-roadmap" class="container" style="padding:80px 20px">
+
+  <h1>Cloud Computing (AWS / Azure) Roadmap</h1>
+
+  <p>
+Cloud computing enables organizations to access computing resources such
+as servers, storage, and networking through the internet. Instead of
+maintaining physical infrastructure, businesses use cloud platforms to
+build scalable and flexible systems. This roadmap introduces learners to
+cloud concepts in a structured and practical manner.
+  </p>
+
+  <h2>Why Cloud Computing Matters</h2>
+
+  <p>
+Modern applications rely on cloud infrastructure for scalability,
+availability, and performance. Cloud platforms support digital services
+used in education, healthcare, finance, and software development. This
+roadmap helps learners understand how cloud systems operate and why they
+are essential in today’s technology ecosystem.
+  </p>
+
+  <h2>Core Cloud Concepts</h2>
+
+  <p>
+Learners begin with fundamental cloud concepts, including virtualization,
+shared resources, and service models. Understanding these basics helps
+build a strong foundation before working with specific platforms.
+  </p>
+
+  <ul>
+    <li>Cloud service models (IaaS, PaaS, SaaS)</li>
+    <li>Virtual machines and containers</li>
+    <li>Cloud storage concepts</li>
+    <li>Networking basics</li>
+    <li>Scalability and availability</li>
+  </ul>
+
+  <h2>Cloud Platforms Overview</h2>
+
+  <p>
+This roadmap introduces popular cloud providers such as Amazon Web
+Services (AWS) and Microsoft Azure. Learners explore how cloud platforms
+organize resources and deliver services through web-based interfaces.
+  </p>
+
+  <h2>Security & Best Practices</h2>
+
+  <p>
+Security is a critical aspect of cloud computing. Learners gain awareness
+of identity management, access control, and shared responsibility models.
+The focus is on understanding principles rather than advanced configuration.
+  </p>
+
+  <h2>Deployment & Monitoring Basics</h2>
+
+  <p>
+Cloud systems support application deployment and monitoring. Learners are
+introduced to basic deployment workflows and performance tracking concepts
+that help maintain system reliability.
+  </p>
+
+  <h2>Career Relevance & Learning Growth</h2>
+
+  <p>
+Cloud computing skills are relevant for roles such as Cloud Support
+Associate, System Administrator, and Infrastructure Engineer. This roadmap
+supports learners in building practical cloud awareness and foundational
+technical knowledge without offering employment guarantees.
+  </p>
+
+  <p style="margin-top:30px;color:#777;font-size:14px;">
+    Disclaimer: This roadmap is provided for educational guidance only.
+    Results depend on learning consistency and real-world practice.
+  </p>
+
+</section>
+
+<section style="padding:50px 20px;background:#f1f1f1;">
+  <h2 style="text-align:center;">Transparency & Disclaimer</h2>
+
+  <p style="max-width:750px;margin:20px auto;color:#555;">
+    Career Skill Hub does not provide job placement services, employment guarantees,
+    or income promises. All content on this website is created for educational
+    and informational purposes only. Learning outcomes depend on individual effort,
+    practice, and external opportunities.
+  </p>
+</section>
+<section id="programmatic-roadmaps" style="padding:60px 20px;">
+  <h2>AI Roadmaps for Different Students</h2>
+  <p>Choose your background and follow the exact AI learning roadmap.</p>
+
+  <div class="roadmap-list">
+    <a href="#ai-bca">AI Roadmap for BCA Students</a><br>
+    <a href="#ai-btech">AI Roadmap for BTech Students</a><br>
+    <a href="#ai-commerce">AI Roadmap for Commerce Students</a><br>
+    <a href="#ai-mechanical">AI Roadmap for Mechanical Students</a><br>
+    <a href="#ai-12th">AI Roadmap After 12th</a>
+  </div>
+</section>
+<section id="ai-bca">
+  <h2>AI Roadmap for BCA Students</h2>
+  <p>This AI roadmap for BCA students explains what to learn semester-wise.</p>
+
+  <ul>
+    <li>Python & Basics of Programming</li>
+    <li>Statistics for AI</li>
+    <li>Machine Learning Fundamentals</li>
+    <li>Projects & Internships</li>
+  </ul>
+</section>
+<section id="ai-btech">
+  <h2>AI Roadmap for BTech Students</h2>
+  <p>Complete AI roadmap for engineering students from basics to advanced.</p>
+
+  <ul>
+    <li>Python + Data Structures</li>
+    <li>Linear Algebra & ML</li>
+    <li>Deep Learning</li>
+    <li>Industry-level projects</li>
+  </ul>
+</section>
+<section id="ai-commerce">
+  <h2>AI Roadmap for Commerce Students</h2>
+  <p>AI roadmap for commerce students without heavy coding.</p>
+
+  <ul>
+    <li>Python basics</li>
+    <li>Data analysis</li>
+    <li>Business analytics</li>
+    <li>AI tools & automation</li>
+  </ul>
+</section>
+<section id="ai-mechanical">
+  <h2>AI Roadmap for Mechanical Students</h2>
+  <p>AI roadmap for mechanical engineering students to switch careers.</p>
+
+  <ul>
+    <li>Python & math refresh</li>
+    <li>Machine learning</li>
+    <li>AI for manufacturing</li>
+    <li>Portfolio projects</li>
+  </ul>
+</section>
+<section id="ai-12th">
+  <h2>AI Roadmap After 12th</h2>
+  <p>Step-by-step AI roadmap for students after class 12.</p>
+
+  <ul>
+    <li>Basic programming</li>
+    <li>Python & logic</li>
+    <li>Intro to AI</li>
+    <li>Skill-based courses</li>
+  </ul>
+</section>
+
+
+   <!-- ===== MAIN FOOTER ===== -->
+<footer class="footer">
+    <div class="container footer-grid">
+
+        <div class="footer-col">
+            <h4>Career Skill Hub</h4>
+            <p>Empowering professionals with future-ready skills.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Skills</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="guidance.html">Guidance</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact Us</h4>
+            <p>Email: chandraprakashsaini480@gmail.com</p>
+        </div>
+
+    </div>
+</footer>
+
+<!-- ===== BOTTOM POLICY STRIP ===== -->
+<footer class="site-footer">
+    <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <span>|</span>
+        <a href="privacy.html">Privacy Policy</a>
+        <span>|</span>
+        <a href="terms.html">Terms & Conditions</a>
+        <span>|</span>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <p class="footer-copy">
+        © 2025 Career Skill Hub. All rights reserved.
+    </p>
+</footer>
+
+<script>
+let currentIndex = 0;
+const testimonials = document.querySelectorAll(".slider-card"); // यह सही है!
+
+function showTestimonial(index) {
+    testimonials.forEach(card => card.classList.remove("active"));
+    testimonials[index].classList.add("active");
+}
+
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    showTestimonial(currentIndex);
+}, 3000);
+</script>
+<script>
+const disclaimer = document.querySelector(".disclaimer");
+
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                disclaimer.classList.add("show");
+            }
+        });
+    },
+    { threshold: 0.3 }
+);
+
+observer.observe(disclaimer);
+</script>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+</script>
+<script>
+const stats = document.querySelectorAll(".stat");
+const numbers = document.querySelectorAll(".stat h3");
+
+const statsObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+
+        const number = entry.target.querySelector("h3");
+        const target = +number.getAttribute("data-count");
+        let count = 0;
+
+        const update = () => {
+          const increment = target / 60;
+          if (count < target) {
+            count += increment;
+            number.innerText = Math.floor(count) + (target > 100 ? "+" : "%");
+            requestAnimationFrame(update);
+          } else {
+            number.innerText = target + (target > 100 ? "+" : "%");
+          }
+        };
+
+        update();
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.4 }
+);
+
+stats.forEach(stat => statsObserver.observe(stat));
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Career Skill Hub",
+  "url": "https://YOURDOMAIN.COM",
+  "description": "Career Skill Hub provides skill roadmaps and career guidance for students."
+}
+</script>
+
+</body>
+</html>

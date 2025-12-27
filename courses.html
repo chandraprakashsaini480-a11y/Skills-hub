@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses & Roadmaps | Career Skill Hub</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .payment-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 9999;
+}
+
+.payment-box {
+    background: #fff;
+    width: 340px;
+    margin: 100px auto;
+    padding: 22px;
+    border-radius: 14px;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.qr-img {
+    width: 220px;
+    margin: 15px 0;
+}
+
+.upi-text {
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.note {
+    font-size: 13px;
+    color: #555;
+}
+
+        /* Yahan woh saare CSS styles (variables, base, header, footer) paste kar dein jo aapne index.html se liye hain. Main yahan sirf Courses Page ke naye styles jod raha hoon. */
+        
+        /* Google Font (Poppins/Montserrat for premium look) */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        /* --- Base Styles & Variables (index.html se copy karein) --- */
+        :root {
+            --primary-color: #004AAD; /* Deep Blue */
+            --secondary-color: #FFC300; /* Gold/Amber Accent */
+            --dark-color: #1A1A2E; /* Dark Background */
+            --light-color: #F8F9FA; /* Off-White Background */
+            --text-color: #333333;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header, Navigation, Footer Styles (index.html se copy karein) --- */
+        /* Note: Header aur Footer ke liye poora CSS copy karein jismein .header, .nav-bar, .logo-area, .footer etc. ke styles hon. */
+         .header {
+    height: 80px;              /* 👈 fixed height */
+    padding: 0;                /* 👈 padding hatao */
+    display: flex;
+    align-items: center;       /* 👈 center me rahe */
+}
+        .nav-bar { display: flex; justify-content: space-between; align-items: center; }
+       .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 0; 
+              /* 👈 important */
+}
+.header-logo-image {
+    height: 150px; /* Logo ki height set karein */
+    width: 150px;  /* Gol aakaar logo ke liye height aur width same */
+    border-radius: 50%; /* Image ko gol bana dega */
+    object-fit: cover; 
+}
+.logo-text-display {
+    font-size: 1.8rem;
+    color: var(--dark-color); /* Ya var(--primary-color) */
+    font-weight: 800;
+    
+}
+/* Yeh line purane .logo style ko override karti hai, agar woh kisi aur tag par laga ho */
+.logo {
+    display: none !important; 
+}
+.nav-links a {
+    margin-left: 15px; 
+    font-weight: 600;
+    padding: 8px 12px; /* Button look ke liye padding */
+    border-radius: 5px; 
+    position: relative;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    text-decoration: none; 
+}
+
+.nav-links a:not(.cta-button) { /* Skills, Jobs, Guidance ke liye */
+    background-color: var(--light-color); /* Halka background */
+    border: 1px solid #dee2e6; /* Halka border */
+    color: var(--secondary-color); /* Dark text */
+}
+
+.nav-links a:not(.cta-button):hover {
+    background-color: #e9ecef; /* Hover par halka dark ho */
+    color: var(--primary-color); 
+    border-color: var(--primary-color);
+}
+
+/* Active Page Indicator (Courses Page ke liye highlight) */
+.nav-links a.active-link { 
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: 1px solid var(--primary-color) !important;
+    font-weight: 700;
+}
+
+/* CTA Button Styles (Ismein thoda badlav kiya hai taaki yeh achcha dikhe) */
+.cta-button {
+    background-color: var(--secondary-color);
+    color: var(--dark-color) !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-left: 25px !important; 
+}
+.cta-button:hover {
+    background-color: #e5b300;
+    transform: translateY(-2px);
+}
+        /* Baaki sabhi CSS styles yahan aayenge */
+        
+        /* --- Naye Courses Page Styles --- */
+        
+        .courses-hero {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .courses-hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .courses-hero p {
+            font-size: 1.2rem;
+            color: #cccccc;
+        }
+
+        /* Course Card Grid Styles */
+        .course-section {
+            padding: 80px 0;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .course-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .course-content {
+            padding: 20px 25px;
+        }
+
+        .course-category {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: inline-block;
+            background-color: #e0f7ff;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .course-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .course-rating {
+            color: var(--secondary-color);
+        }
+
+        .course-rating i {
+            font-size: 1rem;
+            margin-right: 5px;
+        }
+
+        .course-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .course-price span {
+            font-size: 0.9rem;
+            text-decoration: line-through;
+            color: #999;
+            margin-left: 10px;
+        }
+        
+        .enroll-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--secondary-color);
+            color: var(--dark-color) !important;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .enroll-btn:hover {
+            background-color: #e5b300;
+        }
+        .qr-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+}
+.upi-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.upi-btn {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+}
+
+.gpay {
+    background: #4285f4;
+}
+
+.phonepe {
+    background: #6739b7;
+}
+.upi-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.upi-btn {
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+}
+
+.gpay {
+    background: #4285f4;
+}
+
+.phonepe {
+    background: #6739b7;
+}
+
+.paid-btn {
+    background: #28a745;
+}
+
+.footer {
+            background-color: var(--dark-color);
+            color: #dddddd;
+            padding: 50px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            color: #cccccc;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #333333;
+            padding-top: 20px;
+        }
+
+.site-footer {
+    background: #0b1c2d;
+    color: #cfd8dc;
+    text-align: center;
+    padding: 25px 10px;
+    margin-top: 60px;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #ffbf00;
+    text-decoration: underline;
+}
+
+.footer-links span {
+    color: #777;
+}
+
+.footer-copy {
+    font-size: 13px;
+    color: #9aa7b1;
+}
+  
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="container nav-bar"> 
+        <div class="logo-area"> 
+            <img src="csh_logo7.png" alt="Career Skill Hub Logo" class="header-logo-image">
+            <h1 class="logo-text-display">Career Skill Hub</h1> 
+        </div>
+        
+        <nav class="nav-links">
+            <a href="index.html">Skills</a> 
+           <a href="courses.html" class="active-link">Courses</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="guidance.html">Guidance</a>
+            <a href="blog.html">Blog</a>
+            <a href="#" class="cta-button">Start Your Journey</a>
+        </nav>
+
+    </div> 
+</header>
+<section class="courses-hero">
+    <div class="container">
+        <h1>High-Impact Career Courses</h1>
+       <p>Expert-led roadmaps to upgrade your profile and build job-relevant skills.</p>
+
+    </div>
+</section>
+
+<section class="course-section">
+    <div class="container">
+        <h2 class="section-title">Explore Our Top Courses</h2>
+        
+      <div class="course-grid">
+        <div class="course-card">
+    <img src="dsa_course_img5.jpg.png" alt="DSA Course" class="course-image"> 
+    <div class="course-content">
+        <span class="course-category">Programming & DSA</span>
+        <h3 class="course-title">Master Data Structures & Algorithms</h3>
+        
+        <div class="course-meta">
+            <span><i class="fas fa-clock"></i> 100 Hours</span>
+            <span class="course-rating">
+                <i class="fas fa-star"></i>5 (Learner Rating)
+
+            </span>
+        </div>
+
+        <p class="course-price">₹1,999 <span>Limited Offer</span>
+
+       <button class="enroll-btn"
+        onclick="openPayment('Master Data Structures & Algorithms', '₹1,999')">
+    Enroll Now
+</button>
+
+    </div>
+</div>
+
+            
+   <div class="course-card">
+        <img src="ai_logo_final5.png" alt="AI Course" class="course-image"> 
+        <div class="course-content">
+            <span class="course-category">Artificial Intelligence</span>
+            <h3 class="course-title">Full Stack Machine Learning Masterclass</h3>
+            ```
+            <div class="course-meta">
+                <span><i class="fas fa-clock"></i> 60 Hours</span>
+                <span class="course-rating"><i class="fas fa-star"></i>4.1 (Learner Rating)
+</span>
+            </div>
+            <p class="course-price">₹1,200 <span>Limited Offer</span>
+
+           <button class="enroll-btn"
+onclick="openPayment('Full Stack Machine Learning', '1200')">
+Enroll Now
+</button>
+
+        </div>
+    </div>
+
+    <div class="course-card">
+        <img src="hab1.jpg.png" alt="Data Science Course" class="course-image"> 
+        <div class="course-content">
+            <span class="course-category">Data & Analytics</span>
+            <h3 class="course-title">Certified Data Analyst Bootcamp</h3>
+            <div class="course-meta">
+                <span><i class="fas fa-clock"></i> 80 Hours</span>
+                <span class="course-rating"><i class="fas fa-star"></i> 4.7 (Learner Rating)
+</span>
+            </div>
+            <p class="course-price">₹1,899<span>Limited Offer</span>
+
+          <button class="enroll-btn"
+onclick="openPayment('Certified Data Analyst Bootcamp', '1900')">
+Enroll Now
+</button>
+
+        </div>
+    </div>
+
+    <div class="course-card">
+        <img src="web_dev_img1.jpg.png" alt="Web Development Course" class="course-image"> 
+        <div class="course-content">
+            <span class="course-category">Web Development</span>
+            <h3 class="course-title">Modern React & Node.js Development</h3>
+            <div class="course-meta">
+                <span><i class="fas fa-clock"></i> 55 Hours</span>
+                <span class="course-rating"><i class="fas fa-star"></i>4.6 (Learner Rating)
+</span>
+            </div>
+            <p class="course-price">₹2,999 <span>Original Price Higher</span>
+
+          <button class="enroll-btn"
+onclick="openPayment('Modern React & Node.js Development', '2900')">
+Enroll Now
+</button>
+
+        </div>
+    </div>
+
+    <div class="course-card">
+        <img src="cloud_img3.jpg.png" alt="Cloud Computing Course" class="course-image"> 
+        <div class="course-content">
+            <span class="course-category">Cloud Computing</span>
+            <h3 class="course-title">AWS Certified Solutions Architect Course</h3>
+            <div class="course-meta">
+                <span><i class="fas fa-clock"></i> 45 Hours</span>
+                <span class="course-rating"><i class="fas fa-star"></i> 4.9 (Learner Rating)
+</span>
+            </div>
+            <p class="course-price">₹1,400 <span>Original Price Higher</span>
+
+           <button class="enroll-btn"
+onclick="openPayment('AWS Certified Solutions Architect', '1400')">
+Enroll Now
+</button>
+
+        </div>
+    </div>
+</div>
+
+            </div>
+    </div>
+</section>
+
+<section class="assessment-section bg-dark" style="background-color: var(--dark-color); color: white; padding: 60px 0; text-align: center;">
+    <div class="container">
+        <h3 class="section-title" style="color: white; margin-bottom: 20px;">Still Unsure Which Course is Right for You?</h3>
+        <p style="margin-bottom: 30px; color: #cccccc;">Get a personalized recommendation in just 5 minutes.</p>
+        <a href="#" class="primary-cta-btn" style="background-color: var(--secondary-color); color: var(--dark-color) !important;">Get Free Guidance</a>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="container footer-grid">
+
+        <div class="footer-col">
+            <h4>SkillPath Pro</h4>
+            <p>Empowering professionals with future-ready skills.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Skills</a></li>
+                <li><a href="courses.html">Courses</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact Us</h4>
+            <p>Email: chandraprakashsaini480@gmail.com</p>
+        </div>
+
+    </div>
+</footer>
+
+<footer class="site-footer">
+    <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <span>|</span>
+        <a href="privacy.html">Privacy Policy</a>
+        <span>|</span>
+        <a href="terms.html">Terms & Conditions</a>
+        <span>|</span>
+        <a href="contact.html">Contact Us</a>
+    </div>
+    <p class="footer-copy">
+        © 2025 Career Skill Hub. All rights reserved.
+    </p>
+</footer>
+       
+
+<!-- PAYMENT MODAL -->
+<div id="paymentModal" class="payment-modal">
+    <div class="payment-box">
+        <span class="close-btn" onclick="closePayment()">×</span>
+
+        <h2>Complete Your Payment</h2>
+        <p id="courseName"></p>
+        <p id="coursePrice"></p>
+
+        <img src="payment_qr.png.jpg" alt="UPI QR Code" class="qr-img">
+     
+</a>
+
+
+        <p class="upi-text">
+            UPI ID: <b>8955656184-3@axl</b>
+        </p>
+        <div class="upi-buttons">
+    <a href="#" id="gpayLink" class="upi-btn gpay">Pay with GPay</a>
+    <a href="#" id="phonepeLink" class="upi-btn phonepe">Pay with PhonePe</a>
+</div>
+<a href="thankyou.html" class="upi-btn paid-btn">
+    I Have Paid
+</a>
+
+        <p class="note">
+            Payment ke baad screenshot WhatsApp / Email karen
+        </p>
+    </div>
+</div>
+<script>
+function openPayment(course, price) {
+    document.getElementById("courseName").innerHTML = "<b>Course:</b> " + course;
+    document.getElementById("coursePrice").innerHTML = "<b>Amount:</b> " + price;
+
+    let cleanPrice = price.replace("₹", "");
+    let upiId = "8955656184-3@axl";
+    let name = "Career Skill Hub";
+    let note = course;
+    let upiURL = `upi://pay?pa=${upiId}&pn=${name}&am=${cleanPrice}&cu=INR&tn=${note}`;
+
+    document.getElementById("gpayLink").href = upiURL;
+    document.getElementById("phonepeLink").href = upiURL;
+
+    document.getElementById("paymentModal").style.display = "block";
+}
+
+function closePayment() {
+    document.getElementById("paymentModal").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>

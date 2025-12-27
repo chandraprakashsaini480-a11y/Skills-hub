@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings | Career Skill Hub</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Google Font (Poppins/Montserrat for premium look) */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+        /* --- Base Styles & Variables (index.html se copy) --- */
+        :root {
+            --primary-color: #004AAD; /* Deep Blue */
+            --secondary-color: #FFC300; /* Gold/Amber Accent */
+            --dark-color: #1A1A2E; /* Dark Background */
+            --light-color: #F8F9FA; /* Off-White Background */
+            --text-color: #333333;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- 1. Header and Navigation --- */
+         .header {
+    height: 80px;              /* 👈 fixed height */
+    padding: 0;                /* 👈 padding hatao */
+    display: flex;
+    align-items: center;       /* 👈 center me rahe */
+}
+
+          .nav-bar { display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px;
+            margin: 0; 
+        }
+        
+        .header-logo-image { 
+            height: 150px; 
+            width: 150px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+        }
+        
+        .logo-text-display { 
+            font-size: 1.8rem; 
+            color: var(--dark-color);
+            font-weight: 800; 
+        }
+        .logo {
+    display: none !important; 
+}
+
+        /* NAYE BUTTON-STYLE LINKS */
+        .nav-links a {
+            margin-left: 15px; 
+            font-weight: 600;
+            padding: 8px 12px; 
+            border-radius: 5px; 
+            position: relative;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            text-decoration: none; 
+        }
+
+        .nav-links a:not(.cta-button) { 
+            background-color: var(--light-color); 
+            border: 1px solid #dee2e6; 
+            color: var(--dark-color); 
+        }
+
+        .nav-links a:not(.cta-button):hover {
+            background-color: #e9ecef; 
+            color: var(--primary-color); 
+            border-color: var(--primary-color);
+        }
+
+        /* Active Page Indicator (Green color for active link) */
+        .nav-links a.active-link { 
+            background-color: #28a745 !important; /* Green */
+            color: white !important; 
+            border: 1px solid #28a745 !important;
+            font-weight: 700;
+        }
+
+        /* CTA Button Styles */
+        .cta-button {
+            background-color: var(--secondary-color);
+            color: var(--dark-color) !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-left: 25px !important;
+        }
+
+        .cta-button:hover {
+            background-color: #e5b300;
+            transform: translateY(-2px);
+        }
+
+        /* --- General Section Styles --- */
+        section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+            color: var(--dark-color);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        
+        /* --- Job Page Specific Styles --- */
+        
+        .job-hero {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .job-hero h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        .job-hero p {
+            font-size: 1.1rem;
+            color: #cccccc;
+        }
+
+        .job-search-bar {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+        }
+
+        .job-search-bar input,
+        .job-search-bar select {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--font-family);
+            font-size: 1rem;
+        }
+
+        .job-search-bar input {
+            flex-grow: 1; 
+        }
+
+        .job-search-bar select {
+            width: 200px; 
+        }
+
+        /* Job Listing Grid */
+        .job-listing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            text-align: left;
+            margin-top: 50px;
+        }
+
+        .job-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--primary-color); /* Default border color */
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .job-card h4 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .job-card p {
+            color: #666;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .job-card i {
+            margin-right: 8px;
+            color: var(--secondary-color);
+        }
+
+        .job-skills-tag {
+            display: inline-block;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            border: 1px solid #ddd;
+        }
+        
+        /* Apply Now Button */
+        .apply-btn {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .apply-btn:hover {
+            background-color: #003380;
+        }
+        
+        /* --- Footer Styles --- */
+       .footer {
+            background-color: var(--dark-color);
+            color: #dddddd;
+            padding: 50px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            color: #cccccc;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #333333;
+            padding-top: 20px;
+        }
+        .site-footer {
+    background: #0b1c2d;
+    color: #cfd8dc;
+    text-align: center;
+    padding: 25px 10px;
+    margin-top: 60px;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #ffbf00;
+    text-decoration: underline;
+}
+
+.footer-links span {
+    color: #777;
+}
+
+.footer-copy {
+    font-size: 13px;
+    color: #9aa7b1;
+}
+  
+        /* --- Media Queries (Responsiveness) --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simple approach: Hide nav links on small screens */
+            }
+            .nav-bar {
+                justify-content: center;
+            }
+            .job-search-bar {
+                flex-direction: column;
+            }
+            .job-search-bar input,
+            .job-search-bar select,
+            .job-search-bar .cta-button {
+                width: 100%;
+            }
+        }
+        .job-details {
+    display: none;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.job-card:target .job-details {
+    display: block;
+}
+
+.job-card:target {
+    box-shadow: 0 0 0 2px #004AAD;
+}
+
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="container nav-bar"> 
+        <div class="logo-area"> 
+            <img src="csh_logo7.png" alt="Career Skill Hub Logo" class="header-logo-image">
+            <h1 class="logo-text-display">Career Skill Hub</h1> 
+        </div>
+        
+        <nav class="nav-links">
+            <a href="index.html">Skills</a> 
+            <a href="courses.html">Courses</a>
+            <a href="jobs.html" class="active-link">Jobs</a> <a href="guidance.html">Guidance</a>
+            <a href="#" class="cta-button">Start Your Journey</a>
+        </nav>
+    </div> 
+</header>
+
+<section id="job-hero" class="job-hero">
+    <div class="container hero-content">
+        <h2>Find Your Next Digital Career</h2>
+        <p>Curated job openings for high-demand tech skills.</p>
+        <p style="font-size:14px;color:#e0e0e0;margin-top:10px;">
+This page provides job-related information and career guidance only.  
+Career Skill Hub does not offer job placement or employment guarantees.
+</p>
+
+    </div>
+</section>
+
+<section id="job-listings">
+    <div class="container">
+        <h3 class="section-title">Latest Openings</h3>
+        
+        <div class="job-search-bar">
+            <p style="font-size:13px;color:#777;text-align:center;width:100%;">
+Search helps you explore career roles and required skills.
+</p>
+
+            <input type="text" placeholder="Search for Job Title, Company, or Skill">
+            <select>
+                <option value="">Filter by Skill</option>
+                <option value="ai">AI/ML</option>
+                <option value="data">Data Science</option>
+                <option value="cloud">Cloud Computing</option>
+                <option value="web">Web Development</option>
+            </select>
+            <a href="#" class="cta-button" style="margin-left: 0 !important;">Search</a> 
+        </div>
+
+        <div class="job-listing-grid">
+            
+           <div class="job-card" id="job1" style="border-left-color:#8A2BE2;">
+    <h4>Senior AI/ML Engineer</h4>
+    <p><i class="fas fa-building"></i> TechSpark Inc.</p>
+    <p><i class="fas fa-map-marker-alt"></i> Bangalore (Hybrid)</p>
+    <p><i class="fas fa-suitcase"></i> 5+ Years Experience</p>
+
+    <span class="job-skills-tag">AI/ML | Python | Deep Learning</span>
+
+    <a href="#job1" class="apply-btn">View Job Details</a>
+
+    <div class="job-details">
+        <p><b>Role Overview:</b>  
+        Design and deploy machine learning models for real-world business problems.</p>
+
+        <p><b>Key Responsibilities:</b></p>
+        <ul>
+            <li>Build & optimize ML models</li>
+            <li>Work with large datasets</li>
+            <li>Collaborate with product teams</li>
+        </ul>
+
+        <p><b>Required Skills:</b> Python, TensorFlow/PyTorch, SQL</p>
+        <p><b>Career Level:</b> Senior</p>
+
+        <p style="color:#777;">Source: Company career page / public listing</p>
+    </div>
+</div>
+
+
+            </div>
+
+           <div class="job-card" id="job2" style="border-left-color:#28a745;">
+    <h4>Lead Data Scientist</h4>
+    <p><i class="fas fa-building"></i> DataFlow Solutions</p>
+    <p><i class="fas fa-map-marker-alt"></i> Remote</p>
+    <p><i class="fas fa-suitcase"></i> 8+ Years Experience</p>
+
+    <span class="job-skills-tag">R | SQL | ML | Visualization</span>
+
+    <a href="#job2" class="apply-btn">View Job Details</a>
+
+    <div class="job-details">
+        <p><b>Role Overview:</b>  
+        Lead data-driven decision making and mentor analytics teams.</p>
+
+        <p><b>Key Responsibilities:</b></p>
+        <ul>
+            <li>Data modeling & forecasting</li>
+            <li>Business insights reporting</li>
+            <li>Team leadership</li>
+        </ul>
+
+        <p><b>Required Skills:</b> SQL, R/Python, Power BI/Tableau</p>
+        <p><b>Career Level:</b> Lead</p>
+
+        <p style="color:#777;">Source: Public job platforms</p>
+    </div>
+</div>
+
+            
+           <div class="job-card" id="job3" style="border-left-color:#FF8C00;">
+    <h4>AWS Cloud Architect</h4>
+    <p><i class="fas fa-building"></i> CloudScale Infra</p>
+    <p><i class="fas fa-map-marker-alt"></i> Pune</p>
+    <p><i class="fas fa-suitcase"></i> 6+ Years Experience</p>
+
+    <span class="job-skills-tag">AWS | DevOps | Security</span>
+
+    <a href="#job3" class="apply-btn">View Job Details</a>
+
+    <div class="job-details">
+        <p><b>Role Overview:</b>  
+        Design scalable and secure cloud infrastructure on AWS.</p>
+
+        <p><b>Key Responsibilities:</b></p>
+        <ul>
+            <li>Cloud architecture design</li>
+            <li>Cost optimization</li>
+            <li>Security best practices</li>
+        </ul>
+
+        <p><b>Required Skills:</b> AWS EC2, IAM, VPC, DevOps tools</p>
+        <p><b>Career Level:</b> Senior</p>
+
+        <p style="color:#777;">Source: Company hiring page</p>
+    </div>
+</div>
+
+           <div class="job-card" id="job4" style="border-left-color:#1E90FF;">
+    <h4>Senior Frontend Developer (React)</h4>
+    <p><i class="fas fa-building"></i> Creative Digital</p>
+    <p><i class="fas fa-map-marker-alt"></i> Hyderabad (On-site)</p>
+    <p><i class="fas fa-suitcase"></i> 4+ Years Experience</p>
+
+    <span class="job-skills-tag">React | JavaScript | UI/UX</span>
+
+    <a href="#job4" class="apply-btn">View Job Details</a>
+
+    <div class="job-details">
+        <p><b>Role Overview:</b>  
+        Build responsive and high-performance user interfaces.</p>
+
+        <p><b>Key Responsibilities:</b></p>
+        <ul>
+            <li>React component development</li>
+            <li>UI optimization</li>
+            <li>Cross-browser support</li>
+        </ul>
+
+        <p><b>Required Skills:</b> React, JS, HTML, CSS</p>
+        <p><b>Career Level:</b> Senior</p>
+
+        <p style="color:#777;">Source: Public job listing</p>
+    </div>
+</div>
+
+
+        </div>
+    </div>
+</section>
+<section style="padding:70px 0;background:#ffffff;">
+  <div class="container" style="max-width:1000px;">
+    <h2 class="section-title">Build Skills That Get You Job-Ready</h2>
+
+    <p style="font-size:16px;color:#555;line-height:1.8;">
+      Exploring jobs is only the first step. To become eligible for high-demand
+      roles in technology, you must build strong foundational and practical skills.
+      Career Skill Hub helps you understand <b>what to learn</b>, <b>why to learn</b>,
+      and <b>how those skills connect to real job roles</b>.
+    </p>
+  </div>
+</section>
+
+
+
+<section class="assessment-section" style="background-color: var(--dark-color); color: white; padding: 60px 0; text-align: center;">
+    <div class="container">
+        <h3 class="section-title" style="color: white; margin-bottom: 20px;">Can't Find Your Dream Job?</h3>
+        <p style="margin-bottom: 30px; color: #cccccc;">Get personal guidance to tailor your profile for high-paying roles.</p>
+        <a href="guidance.html" class="cta-button" style="background-color: #28a745; color: white !important;">Get Personalized Guidance</a>
+    </div>
+</section>
+<section style="padding:50px 20px;background:#f1f3f5;">
+  <div class="container" style="max-width:900px;">
+    <h3 style="text-align:center;margin-bottom:15px;">
+      Important Disclaimer
+    </h3>
+    <p style="color:#555;font-size:15px;line-height:1.8;text-align:center;">
+      Career Skill Hub is not a recruitment agency and does not offer
+      placement services or job guarantees.  
+      All job roles shown are for informational purposes only.
+      Candidates must apply through official company websites
+      or trusted job portals.
+    </p>
+  </div>
+</section>
+<section style="padding:60px 0;background:#f8f9fa;">
+  <div class="container">
+    <h2 class="section-title">Recommended Learning Paths</h2>
+
+    <div class="job-listing-grid">
+
+      <div class="job-card">
+        <h4>AI / Data Science Path</h4>
+        <p>For AI Engineer, Data Scientist roles</p>
+        <ul>
+          <li>Python & Statistics</li>
+          <li>Machine Learning</li>
+          <li>Mini Projects</li>
+        </ul>
+        <a href="courses.html" class="apply-btn">Explore Courses</a>
+      </div>
+
+      <div class="job-card">
+        <h4>Cloud & DevOps Path</h4>
+        <p>For AWS, Cloud Engineer roles</p>
+        <ul>
+          <li>AWS Fundamentals</li>
+          <li>Linux & Networking</li>
+          <li>Deployment basics</li>
+        </ul>
+        <a href="courses.html" class="apply-btn">Explore Courses</a>
+      </div>
+
+      <div class="job-card">
+        <h4>Frontend Development Path</h4>
+        <p>For Frontend / Web roles</p>
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>React Basics</li>
+          <li>UI Projects</li>
+        </ul>
+        <a href="courses.html" class="apply-btn">Explore Courses</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section style="padding:70px 0;background:#ffffff;">
+  <div class="container" style="max-width:1000px;">
+    <h2 class="section-title">How to Prepare for Jobs</h2>
+
+    <ol style="text-align:left;font-size:16px;color:#555;line-height:2;">
+      <li>Select a career path</li>
+      <li>Learn required technical skills</li>
+      <li>Build practice projects</li>
+      <li>Create resume & portfolio</li>
+      <li>Apply via trusted platforms</li>
+      <li>Prepare for interviews</li>
+    </ol>
+
+    <p style="margin-top:20px;color:#777;">
+      Note: This is guidance only. Job outcomes depend on individual effort.
+    </p>
+  </div>
+</section>
+<section style="padding:60px 0;background:#004AAD;color:white;text-align:center;">
+  <div class="container">
+    <h2 style="margin-bottom:15px;">Ready to Start Learning?</h2>
+    <p style="color:#dddddd;margin-bottom:25px;">
+      Explore structured courses designed to build job-ready skills.
+    </p>
+    <a href="courses.html" class="cta-button" style="background:#FFC300;">
+      View All Courses
+    </a>
+  </div>
+</section>
+<script>
+const searchInput = document.querySelector('.job-search-bar input');
+const skillSelect = document.querySelector('.job-search-bar select');
+const jobCards = document.querySelectorAll('.job-card');
+const searchBtn = document.querySelector('.job-search-bar .cta-button');
+
+searchBtn.addEventListener('click', function(e) {
+    e.preventDefault(); // page reload nahi hoga
+
+    const searchText = searchInput.value.trim().toLowerCase();
+    const selectedSkill = skillSelect.value.trim().toLowerCase();
+
+    jobCards.forEach(card => {
+        const title = card.querySelector('h4').textContent.toLowerCase();
+        const skills = card.querySelector('.job-skills-tag').textContent.toLowerCase();
+
+        // Agar search empty ho aur skill empty ho → show all
+        if ( (searchText === '' || title.includes(searchText) || skills.includes(searchText)) &&
+             (selectedSkill === '' || skills.includes(selectedSkill)) ) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
+
+// Enter press se bhi search chale
+searchInput.addEventListener('keypress', function(e){
+    if(e.key === 'Enter') searchBtn.click();
+});
+</script>
+
+
+<footer class="footer">
+    <div class="container footer-grid">
+
+        <div class="footer-col">
+            <h4>SkillPath Pro</h4>
+            <p>Empowering professionals with future-ready skills.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Skills</a></li>
+                <li><a href="courses.html">Courses</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact Us</h4>
+            <p>Email: chandraprakashsaini480@gmail.com</p>
+        </div>
+
+    </div>
+</footer>
+
+<footer class="site-footer">
+    <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <span>|</span>
+        <a href="privacy.html">Privacy Policy</a>
+        <span>|</span>
+        <a href="terms.html">Terms & Conditions</a>
+        <span>|</span>
+        <a href="contact.html">Contact Us</a>
+    </div>
+    <p class="footer-copy">
+        © 2025 Career Skill Hub. All rights reserved.
+    </p>
+</footer>
+       
+
+</body>
+</html>

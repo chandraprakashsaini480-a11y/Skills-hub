@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance | Career Skill Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+        :root {
+            --primary-color: #004AAD;
+            --secondary-color: #FFC300;
+            --dark-color: #1A1A2E;
+            --light-color: #F8F9FA;
+            --text-color: #333333;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: var(--font-family); line-height:1.6; color: var(--text-color); background-color: var(--light-color); }
+        a { text-decoration:none; color: var(--primary-color); transition: 0.3s; }
+        .container { max-width:1200px; margin:0 auto; padding: 0 20px; }
+
+        /* --- Header --- */
+        .header { height: 80px; display:flex; align-items:center; }
+        .nav-bar { display:flex; justify-content:space-between; align-items:center; }
+        .logo-area { display:flex; align-items:center; gap:10px; }
+        .header-logo-image { height:80px; width:80px; border-radius:50%; object-fit:cover; }
+        .logo-text-display { font-size:1.8rem; color: var(--dark-color); font-weight:800; }
+        .nav-links a { margin-left:15px; font-weight:600; padding:8px 12px; border-radius:5px; }
+        .nav-links a.active-link { background-color:#28a745; color:white; font-weight:700; }
+
+        .cta-button { background-color: var(--secondary-color); color: var(--dark-color); padding:10px 20px; border-radius:5px; font-weight:700; transition:0.3s; }
+        .cta-button:hover { background-color:#e5b300; }
+
+        /* --- Section Titles --- */
+        .section-title { font-size:2.2rem; margin-bottom:40px; color: var(--dark-color); position: relative; display:inline-block; }
+        .section-title::after { content:''; display:block; width:60px; height:4px; background-color: var(--secondary-color); margin:10px auto 0; border-radius:2px; }
+
+        /* --- Hero Section --- */
+        .guidance-hero { background-color: var(--primary-color); color:white; padding:60px 0; text-align:center; }
+        .guidance-hero h2 { font-size:2.8rem; margin-bottom:10px; }
+        .guidance-hero p { font-size:1.1rem; color:#cccccc; }
+
+        /* --- Guidance Cards --- */
+        .guidance-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:30px; margin-top:50px; }
+        .guidance-card { background-color:white; padding:25px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.08); transition:0.3s; border-left:4px solid var(--primary-color); }
+        .guidance-card:hover { transform: translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.15); }
+        .guidance-card h4 { font-size:1.5rem; color: var(--primary-color); margin-bottom:10px; }
+        .guidance-card p { color:#666; margin-bottom:10px; font-size:0.95rem; }
+
+        /* --- Guidance Form --- */
+        .guidance-form-section { background-color: var(--light-color); padding:60px 0; text-align:center; }
+        .guidance-form { max-width:600px; margin:0 auto; background:white; padding:30px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); text-align:left; }
+        .guidance-form label { display:block; margin-bottom:5px; font-weight:600; }
+        .guidance-form input, .guidance-form select, .guidance-form textarea { width:100%; padding:12px; margin-bottom:20px; border:1px solid #ccc; border-radius:5px; font-family:var(--font-family); }
+        .guidance-form textarea { resize:none; height:120px; }
+        .guidance-form button { background-color: var(--primary-color); color:white; padding:12px 20px; border:none; border-radius:5px; font-weight:600; cursor:pointer; transition:0.3s; }
+        .guidance-form button:hover { background-color:#003380; }
+
+        /* --- CTA Section --- */
+        .guidance-cta { background-color: var(--dark-color); color:white; padding:60px 0; text-align:center; }
+        .guidance-cta a { background-color:#28a745; color:white !important; padding:15px 25px; font-size:1.1rem; }
+
+        /* --- Footer --- */
+        .footer, .site-footer { text-align:center; padding:50px 0 20px; background-color: var(--dark-color); color:#ddd; }
+        .footer a, .site-footer a { color:white; text-decoration:none; margin:0 8px; }
+        .footer a:hover, .site-footer a:hover { color:#ffbf00; text-decoration:underline; }
+
+        /* --- Responsive --- */
+        @media(max-width:768px){
+            .nav-links { display:none; }
+            .guidance-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav-bar">
+        <div class="logo-area">
+            <img src="csh_logo7.png" alt="Career Skill Hub Logo" class="header-logo-image">
+            <h1 class="logo-text-display">Career Skill Hub</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Skills</a>
+            <a href="courses.html">Courses</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="guidance.html" class="active-link">Guidance</a>
+            <a href="#" class="cta-button">Start Your Journey</a>
+        </nav>
+    </div>
+</header>
+
+<section class="guidance-hero">
+    <div class="container">
+        <h2>Personalized Career Guidance</h2>
+        <p>Boost your career with expert guidance, resume tips, interview preparation, and skill mapping.</p>
+    </div>
+</section>
+
+<section class="guidance-cards">
+    <div class="container">
+        <h3 class="section-title">Our Guidance Services</h3>
+        <div class="guidance-grid">
+            <div class="guidance-card" style="border-left-color:#8A2BE2;">
+                <h4>Resume & Cover Letter Review</h4>
+                <p>Get professional feedback on your resume and cover letters to make them job-ready.</p>
+            </div>
+            <div class="guidance-card" style="border-left-color:#28a745;">
+                <h4>Interview Preparation</h4>
+                <p>Mock interviews and expert tips to improve confidence and ace your interviews.</p>
+            </div>
+            <div class="guidance-card" style="border-left-color:#FF8C00;">
+                <h4>Skill Mapping & Career Plan</h4>
+                <p>Analyze your skills and create a roadmap for growth in your desired field.</p>
+            </div>
+            <div class="guidance-card" style="border-left-color:#1E90FF;">
+                <h4>Job Search Assistance</h4>
+                <p>Receive guidance on finding job opportunities, networking, and applying strategically.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="guidance-form-section">
+    <div class="container">
+        <h3 class="section-title">Book Your Guidance Session</h3>
+        <form class="guidance-form" action="#" method="POST">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="guidance-type">Guidance Type</label>
+            <select id="guidance-type" name="guidance-type" required>
+                <option value="">Select Guidance Type</option>
+                <option value="resume">Resume & Cover Letter Review</option>
+                <option value="interview">Interview Preparation</option>
+                <option value="skill">Skill Mapping & Career Plan</option>
+                <option value="jobsearch">Job Search Assistance</option>
+            </select>
+
+            <label for="message">Additional Message</label>
+            <textarea id="message" name="message" placeholder="Write your queries or requirements here..."></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+</section>
+
+<section class="guidance-cta">
+    <div class="container">
+        <h3 class="section-title" style="color:white;">Ready to Elevate Your Career?</h3>
+        <p style="color:#ccc; margin-bottom:30px;">Book a one-on-one session with our career experts today.</p>
+        <a href="contact.html" class="cta-button">Get Personalized Guidance</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 Career Skill Hub. All rights reserved.</p>
+        <div>
+            <a href="about.html">About Us</a> |
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="terms.html">Terms & Conditions</a> |
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
